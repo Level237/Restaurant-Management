@@ -5,6 +5,7 @@ Use App\Http\Controllers\Admin\AdminController;
 Use App\Http\Controllers\Admin\CategoryController;
 Use App\Http\Controllers\Admin\MenuController;
 Use App\Http\Controllers\Admin\TableController;
+Use App\Http\Controllers\Admin\ReservationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
