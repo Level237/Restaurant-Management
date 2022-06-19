@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Reservations;
+
 
 class ReservationController extends Controller
 {
@@ -14,7 +16,8 @@ class ReservationController extends Controller
      */
     public function index()
     {
-        return view('admin.reservations.index');
+        $reservations=Reservation::all();
+        return view('admin.reservations.index',compact('reservations'));
     }
 
     /**
