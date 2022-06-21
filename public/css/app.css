@@ -822,6 +822,9 @@ select {
 .h-20 {
   height: 5rem;
 }
+.h-32 {
+  height: 8rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -854,6 +857,9 @@ select {
 }
 .w-10 {
   width: 2.5rem;
+}
+.w-32 {
+  width: 8rem;
 }
 .max-w-xl {
   max-width: 36rem;
