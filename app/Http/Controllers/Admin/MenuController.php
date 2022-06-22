@@ -40,7 +40,16 @@ class MenuController extends Controller
      */
     public function store(MenuRequest $request)
     {
-        //
+        $image=$request->file('image')->store('public/menus');
+
+        Menu::create([
+            'name'=>$request->name,
+            'description'=>$image,
+            'image'=>$request->description,
+            'price'=>$request->price
+        ]);
+
+        return to_route('admin.menus.index');
     }
 
     /**
