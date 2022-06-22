@@ -86,7 +86,7 @@ class CategoryController extends Controller
             'description'=>'required',
             'name'=>'required',
         ]);
-
+        $image=$category->image;
         if($request->hasFile('image')){
             Storage::delete($category->image);
             $image=$request->file('image')->store('public/categories');
