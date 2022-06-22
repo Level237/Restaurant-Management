@@ -26,7 +26,12 @@
                             <input type="file" id="image" wire:model.lazy="newImage" name="image" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2">
                         </div>
                     </div>
-
+                    <div class="sm:col-span-6">
+                        <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
+                        <div class="mt-1">
+                            <input type="number" id="price" min="0.00" max="10000.00" step="0.01" name="price" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2">
+                        </div>
+                    </div>
                     <div class="sm:col-span-6">
 
                         <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
@@ -36,7 +41,7 @@
                     <div class="sm:col-span-6 pt-5">
                         <label for="body" class="block text-sm font-medium text-gray-700">Categories</label>
                         <div class="mt-1">
-                            <select multiple>
+                            <select multiple name="categories[]" class="form-multiselect block w-full mt-1">
                                 @foreach ($categories as $category)
                                     <option value="">{{ $category->name }}</option>
                                 @endforeach
