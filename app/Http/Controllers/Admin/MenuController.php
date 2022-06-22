@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Menu;
 use App\Models\Category;
 use App\Http\Requests\MenuRequest;
+use Illuminate\Support\Facades\Storage;
 
 class MenuController extends Controller
 {
@@ -45,7 +46,7 @@ class MenuController extends Controller
         Menu::create([
             'name'=>$request->name,
             'description'=>$request->description,
-            'image'=>$request->description,
+            'image'=>$image,
             'price'=>$request->price
         ]);
 
