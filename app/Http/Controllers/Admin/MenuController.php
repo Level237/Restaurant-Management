@@ -92,20 +92,24 @@ class MenuController extends Controller
         $request->validate([
             'name'=>'required',
             'description'=>'required',
-            'name'=>'required',
+            'price'=>'required',
         ]);
-        $image=$category->image;
+        $image=$menu->image;
         if($request->hasFile('image')){
-            Storage::delete($category->image);
-            $image=$request->file('image')->store('public/categories');
+            Storage::delete($menu->image);
+            $image=$request->file('image')->store('public/menus');
 
         }
-        $category->update([
+        $menu->update([
             'name'=>$request->name,
             'description'=>$request->description,
-            'image'=>$image
+            'image'=>$image,
+            'price'=>$request->price
         ]);
-        return to_route('admin.categories.index');
+        if($request->has('categories')){
+            $menu->categories()->sync($request->categories);
+        }
+        return to_route('admin.menus.index');
     }
 
     /**
