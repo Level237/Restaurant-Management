@@ -43,12 +43,16 @@ class MenuController extends Controller
     {
         $image=$request->file('image')->store('public/menus');
 
-        Menu::create([
+        $menu=Menu::create([
             'name'=>$request->name,
             'description'=>$request->description,
             'image'=>$image,
             'price'=>$request->price
         ]);
+
+        if($request->has('categories')){
+            $menu->categories()->attach($request->categories);
+        }
 
         return to_route('admin.menus.index');
     }
