@@ -87,9 +87,25 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Menu $menu)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'description'=>'required',
+            'name'=>'required',
+        ]);
+        $image=$category->image;
+        if($request->hasFile('image')){
+            Storage::delete($category->image);
+            $image=$request->file('image')->store('public/categories');
+
+        }
+        $category->update([
+            'name'=>$request->name,
+            'description'=>$request->description,
+            'image'=>$image
+        ]);
+        return to_route('admin.categories.index');
     }
 
     /**
