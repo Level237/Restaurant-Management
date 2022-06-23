@@ -36,8 +36,10 @@
                         <label for="status" class="block text-sm font-medium text-gray-700">Status</label>
                         <div class="mt-1">
                             <select id="status" name="status" class="form-multiselect block w-full mt-1">
+                                @foreach (App\Enums\TableStatus::cases() as $status)
+                                    <option value="{{ $status->value }}">{{ $status->name }}</option>
+                                @endforeach
 
-                                    <option value=""></option>
 
                             </select>
                         </div>
@@ -46,8 +48,10 @@
                         <label for="location" class="block text-sm font-medium text-gray-700">location</label>
                         <div class="mt-1">
                             <select id="status" name="location" class="form-multiselect block w-full mt-1">
+                                @foreach (App\Enums\TableLocation::cases() as $location)
+                                    <option value="{{ $location->value }}">{{ $location->name }}</option>
+                                @endforeach
 
-                                    <option value=""></option>
 
                             </select>
                         </div>
