@@ -13,7 +13,7 @@
             </div>
             <div class="m-2 p-2 bg-white rounded">
                 <div class="space-y-8 divide-y divide-gray-200 w-1/2 mt-10">
-                    <form action="{{ route('admin.table.store') }}" method="POST">
+                    <form action="{{ route('admin.tables.store') }}" method="POST">
                         @csrf
                     <div class="sm:col-span-6">
                         <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
@@ -21,16 +21,11 @@
                             <input type="text" id="title"  name="name" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2">
                         </div>
                     </div>
+
                     <div class="sm:col-span-6">
-                        <label for="title" class="block text-sm font-medium text-gray-700">Image</label>
+                        <label for="guest_name" class="block text-sm font-medium text-gray-700">Guest number</label>
                         <div class="mt-1">
-                            <input type="file" id="image" wire:model.lazy="newImage" name="image" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2">
-                        </div>
-                    </div>
-                    <div class="sm:col-span-6">
-                        <label for="price" class="block text-sm font-medium text-gray-700">Guest number</label>
-                        <div class="mt-1">
-                            <input type="number" id="price"  name="price" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2">
+                            <input type="number" id="guest_number"  name="guest_number" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2">
                         </div>
                     </div>
                     <div class="sm:col-span-6 pt-5">

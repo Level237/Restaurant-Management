@@ -13,7 +13,7 @@ class Table extends Model
 
     protected $fillable=[
         'name',
-        'guest_name',
+        'guest_number',
         'status',
         'location'
     ];
