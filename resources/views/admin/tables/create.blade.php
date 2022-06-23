@@ -27,10 +27,30 @@
                         </div>
                     </div>
                     <div class="sm:col-span-6">
+                        <label for="price" class="block text-sm font-medium text-gray-700">Guest number</label>
+                        <div class="mt-1">
+                            <input type="number" id="price"  name="price" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2">
+                        </div>
+                    </div>
+                    <div class="sm:col-span-6 pt-5">
+                        <label for="status" class="block text-sm font-medium text-gray-700">Status</label>
+                        <div class="mt-1">
+                            <select id="status" name="status" class="form-multiselect block w-full mt-1">
 
-                        <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
-                        <textarea name="description" id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your message..."></textarea>
+                                    <option value=""></option>
 
+                            </select>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-6 pt-5">
+                        <label for="location" class="block text-sm font-medium text-gray-700">location</label>
+                        <div class="mt-1">
+                            <select id="status" name="location" class="form-multiselect block w-full mt-1">
+
+                                    <option value=""></option>
+
+                            </select>
+                        </div>
                     </div>
                     <div class="mt-6 p-4">
                         <button type="submit" class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded text-white">Store</button>
