@@ -77,9 +77,11 @@ class TableController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TableRequest $request, Table $table)
     {
-        //
+        $table->update($request->validated());
+
+        return to_route('admin.tables.index');
     }
 
     /**
