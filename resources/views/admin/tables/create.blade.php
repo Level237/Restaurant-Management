@@ -13,7 +13,8 @@
             </div>
             <div class="m-2 p-2 bg-white rounded">
                 <div class="space-y-8 divide-y divide-gray-200 w-1/2 mt-10">
-                    <form action="{{ route('admin.categories.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.table.store') }}" method="POST">
+                        @csrf
                     <div class="sm:col-span-6">
                         <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
                         <div class="mt-1">
