@@ -65,9 +65,9 @@ class TableController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Table $table)
     {
-        //
+        return view('admin.table.edit',compact('table'));
     }
 
     /**
