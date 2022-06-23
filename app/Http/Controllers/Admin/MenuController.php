@@ -74,9 +74,10 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Menu $menu)
     {
-        //
+        $categories=Category::all();
+        return view('admin.menus.edit',compact('menu','categories'));
     }
 
     /**
