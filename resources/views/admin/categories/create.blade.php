@@ -18,20 +18,28 @@
                         <div class="sm:col-span-6">
                         <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
                         <div class="mt-1">
-                            <input type="text" id="title"  name="name" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2">
+                            <input type="text" id="title"  name="name" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2 @error('name') border-red-400 @enderror">
                         </div>
+                        @error('name')
+                            <div class="text-sm text-red-400">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="sm:col-span-6">
                         <label for="name" class="block text-sm font-medium text-gray-700">Image</label>
                         <div class="mt-1">
-                            <input type="file" id="image"  name="image" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2">
+                            <input type="file" id="image"  name="image" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2 @error('name') border-red-400 @enderror">
                         </div>
+                        @error('image')
+                            <div class="text-sm text-red-400">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="sm:col-span-6">
 
                         <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Description</label>
-                        <textarea name="description" id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your message..."></textarea>
-
+                        <textarea name="description" id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 @error('name') border-red-400 @enderror" placeholder="Your message..."></textarea>
+                        @error('description')
+                            <div class="text-sm text-red-400">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="mt-6 p-4">
                         <button type="submit" class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded text-white">Store</button>
