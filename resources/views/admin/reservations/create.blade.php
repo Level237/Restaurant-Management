@@ -13,7 +13,7 @@
             </div>
             <div class="m-2 p-2 bg-white rounded">
                 <div class="space-y-8 divide-y divide-gray-200 w-1/2 mt-10">
-                    <form method="POST" {{ route('admin.reservations.store') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('admin.reservations.store') }}"  enctype="multipart/form-data">
                     @csrf
                         <div class="sm:col-span-6">
                         <label for="first_name" class="block text-sm font-medium text-gray-700">First Name</label>
@@ -54,7 +54,7 @@
                     <div class="sm:col-span-6 pt-5">
                         <label for="table_id" class="block text-sm font-medium text-gray-700">Tables</label>
                         <div class="mt-1">
-                            <select id="status" name="location" class="form-multiselect block w-full mt-1">
+                            <select id="status" name="table_id" class="form-multiselect block w-full mt-1">
                                 @foreach ($tables as $table)
                                     <option value="{{ $table->id }}">{{ $table->name }}</option>
                                 @endforeach

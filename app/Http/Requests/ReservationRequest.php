@@ -30,7 +30,7 @@ class ReservationRequest extends FormRequest
             'phone_number'=>['required'],
             'res_date'=>['required'],
             'table_id'=>['required'],
-            'guest_name'=>['required'],
+            'guest_number'=>['required'],
         ];
     }
 }
