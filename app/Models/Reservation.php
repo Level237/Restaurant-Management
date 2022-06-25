@@ -22,7 +22,7 @@ class Reservation extends Model
     ];
 
     protected $casts=[
-        'res_date'=>TableStatus::class,
+        'res_date',
     ];
 
     /**

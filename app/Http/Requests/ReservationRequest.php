@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Rules\DateBetween;
 
 class ReservationRequest extends FormRequest
 {
@@ -28,7 +29,7 @@ class ReservationRequest extends FormRequest
             'last_name'=>['required'],
             'email'=>['required'],
             'phone_number'=>['required'],
-            'res_date'=>['required'],
+            'res_date'=>['required','date',new DateBetween],
             'table_id'=>['required'],
             'guest_number'=>['required'],
         ];
