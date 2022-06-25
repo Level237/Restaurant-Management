@@ -27,7 +27,7 @@
                     <div class="sm:col-span-6">
                         <label for="last_name" class="block text-sm font-medium text-gray-700">Last Name</label>
                         <div class="mt-1">
-                            <input type="text" id="last_name"  name="last_name" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2 @error(last_name') border-red-400 @enderror">
+                            <input type="text" id="last_name"  name="last_name" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2 @error('last_name') border-red-400 @enderror">
                         </div>
                         @error('last_name')
                             <div class="text-sm text-red-400">{{ $message }}</div>
