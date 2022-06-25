@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Table;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Reservation extends Model
 {
@@ -18,4 +20,18 @@ class Reservation extends Model
         'phone_number',
         'res_date'
     ];
+
+    protected $casts=[
+        'res_date'=>TableStatus::class,
+    ];
+
+    /**
+     * Get the Table that owns the Reservation
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function Table(): BelongsTo
+    {
+        return $this->belongsTo(Table::class);
+    }
 }
