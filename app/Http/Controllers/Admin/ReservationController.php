@@ -65,7 +65,8 @@ class ReservationController extends Controller
      */
     public function edit(Reservation $reservation)
     {
-        return view('admin.reservations.edit',compact('reservation'));
+        $tables=Table::all();
+        return view('admin.reservations.edit',compact('reservation','tables'));
     }
 
     /**
@@ -88,8 +89,10 @@ class ReservationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Reservation $reservation)
     {
-        //
+        $reservation->delete();
+
+        return to_route('admin.reservations.index');
     }
 }

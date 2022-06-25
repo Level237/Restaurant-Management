@@ -63,7 +63,7 @@
                     <div class="sm:col-span-6">
                         <label for="guest_number" class="block text-sm font-medium text-gray-700">Guest number</label>
                         <div class="mt-1">
-                            <input type="number" id="guest_number" value="'{{ $reservation->guest_number }}" name="guest_number" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2 @error('guest_number') border-red-400 @enderror">
+                            <input type="number" id="guest_number" value="{{ $reservation->guest_number }}" name="guest_number" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2 @error('guest_number') border-red-400 @enderror">
                         </div>
                         @error('guest_number')
                             <div class="text-sm text-red-400">{{ $message }}</div>

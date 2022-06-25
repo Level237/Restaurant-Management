@@ -59,8 +59,8 @@
 
 
                                 <div class="flex space-x-2">
-                                    <a href="{{ route('admin.menus.edit',$reservation->id) }}" class="px-4 py-2 bg-green-500 hover:bg-green-700 rounded-lg text-white">Edit</a>
-                                    <form method="POST" action="{{ route('admin.menus.destroy',$reservation->id) }}" class="px-4 py-2 bg-red-700 rounded-lg text-white" onsubmit="return confirm('Are you sure?')">
+                                    <a href="{{ route('admin.reservations.edit',$reservation->id) }}" class="px-4 py-2 bg-green-500 hover:bg-green-700 rounded-lg text-white">Edit</a>
+                                    <form method="POST" action="{{ route('admin.reservations.destroy',$reservation->id) }}" class="px-4 py-2 bg-red-700 rounded-lg text-white" onsubmit="return confirm('Are you sure?')">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit">Delete</button>
