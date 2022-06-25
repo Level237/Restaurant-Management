@@ -75,9 +75,11 @@ class ReservationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ReservationRequest $request, Reservation $reservation)
     {
-        //
+        $reservation->update($request->validated());
+
+        return to_route('admin.reservations.index');
     }
 
     /**
