@@ -18,20 +18,26 @@
                     <div class="sm:col-span-6">
                         <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
                         <div class="mt-1">
-                            <input type="text" id="title"  name="name" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2">
+                            <input type="text" id="title"  name="name" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2 @error('name') border-red-400 @enderror">
                         </div>
+                        @error('name')
+                            <div class="text-sm text-red-400">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="sm:col-span-6">
                         <label for="guest_name" class="block text-sm font-medium text-gray-700">Guest number</label>
                         <div class="mt-1">
-                            <input type="number" id="guest_number"  name="guest_number" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2">
+                            <input type="number" id="guest_number"  name="guest_number" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2 @error('guest_number') border-red-400 @enderror">
                         </div>
+                        @error('guest_number')
+                            <div class="text-sm text-red-400">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="sm:col-span-6 pt-5">
                         <label for="status" class="block text-sm font-medium text-gray-700">Status</label>
                         <div class="mt-1">
-                            <select id="status" name="status" class="form-multiselect block w-full mt-1">
+                            <select id="status" name="status" class="form-multiselect block w-full mt-1 @error('status') border-red-400 @enderror">
                                 @foreach (App\Enums\TableStatus::cases() as $status)
                                     <option value="{{ $status->value }}">{{ $status->name }}</option>
                                 @endforeach
@@ -39,9 +45,12 @@
 
                             </select>
                         </div>
+                        @error('status')
+                            <div class="text-sm text-red-400">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="sm:col-span-6 pt-5">
-                        <label for="location" class="block text-sm font-medium text-gray-700">location</label>
+                        <label for="location" class="block text-sm font-medium text-gray-700 @error('location') border-red-400 @enderror">location</label>
                         <div class="mt-1">
                             <select id="status" name="location" class="form-multiselect block w-full mt-1">
                                 @foreach (App\Enums\TableLocation::cases() as $location)
@@ -51,6 +60,9 @@
 
                             </select>
                         </div>
+                        @error('location')
+                            <div class="text-sm text-red-400">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="mt-6 p-4">
                         <button type="submit" class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded text-white">Store</button>
