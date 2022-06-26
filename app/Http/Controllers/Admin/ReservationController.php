@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Reservation;
 use App\Models\Table;
 use App\Http\Requests\ReservationRequest;
+use App\Enums\TableStatus;
 
 class ReservationController extends Controller
 {
@@ -29,7 +30,7 @@ class ReservationController extends Controller
      */
     public function create()
     {
-        $tables=Table::all();
+        $tables=Table::where('status',TableStatus::Availlable)->get();
         return view('admin.reservations.create',compact('tables'));
     }
 
