@@ -30,7 +30,7 @@ class ReservationController extends Controller
      */
     public function create()
     {
-        $tables=Table::where('status',TableStatus::Availlable)->get();
+        $tables=Table::where('status',TableStatus::Avaliable)->get();
         return view('admin.reservations.create',compact('tables'));
     }
 
