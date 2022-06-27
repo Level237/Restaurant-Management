@@ -8,6 +8,7 @@ use App\Models\Reservation;
 use App\Models\Table;
 use App\Http\Requests\ReservationRequest;
 use App\Enums\TableStatus;
+use Carbon\Carbon;
 
 class ReservationController extends Controller
 {
@@ -47,6 +48,12 @@ class ReservationController extends Controller
         if($request->guest_number > $table->guest_number){
 
             return back()->with('warning','Please choose the table base on guests');
+        }
+        $request_date=Carbon::parse($request->res_date);
+        foreach($table->Reservations as $res){
+            if($res->res_date->format('Y-m-d')==$request_date->format('Y-m-d')){
+                return back()->with('warning',' Please This table is reserved for this date');
+            }
         }
         Reservation::create($request->validated());
         return to_route('admin.reservations.index')->with('success','Reservation created Successfully');

@@ -82,7 +82,7 @@
 
                   @if(session()->has('warning'))
                   <div class="p-4 mb-4 text-sm text-yellow-700 bg-yellow-100 rounded-lg dark:bg-yellow-200 dark:text-yellow-800" role="alert">
-                    <span class="font-medium">Warning alert!</span>{{ session()->get('warning') }}
+                    <span class="font-medium"></span>{{ session()->get('warning') }}
                   </div>
                   @endif
 

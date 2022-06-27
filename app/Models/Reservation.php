@@ -21,9 +21,12 @@ class Reservation extends Model
         'res_date'
     ];
 
+
+
     protected $casts=[
-        'res_date',
+        'res_date'=>'datetime',
     ];
+
 
     /**
      * Get the Table that owns the Reservation
