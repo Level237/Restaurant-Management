@@ -218,33 +218,7 @@
         </div>
       </div>
     </section>
-    <section class="pt-4 pb-12 bg-gray-50">
-      <div class="my-8 text-center">
-        <h2 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
-          Food Gallery</h2>
-        <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. soluta sapient</p>
-      </div>
-      <div class="container grid gap-4 mx-auto lg:grid-cols-3">
-        <div class="w-full rounded">
-          <img src="https://cdn.pixabay.com/photo/2013/07/12/19/20/sushi-154590__340.png" alt="image">
-        </div>
-        <div class="w-full rounded">
-          <img src="https://cdn.pixabay.com/photo/2015/08/20/19/18/market-897990__340.jpg" alt="image">
-        </div>
-        <div class="w-full rounded">
-          <img src="https://cdn.pixabay.com/photo/2014/10/19/20/59/hamburger-494706__340.jpg" alt="image">
-        </div>
-        <div class="w-full rounded">
-          <img src="https://cdn.pixabay.com/photo/2016/02/19/11/30/pizza-1209748_960_720.jpg" alt="image">
-        </div>
-        <div class="w-full rounded">
-          <img src="https://cdn.pixabay.com/photo/2015/07/12/14/26/coffee-842020__340.jpg" alt="image">
-        </div>
-        <div class="w-full rounded">
-          <img src="https://cdn.pixabay.com/photo/2016/11/23/18/31/pasta-1854245__340.jpg" alt="image">
-        </div>
-      </div>
-    </section>
+
 
     <section class="pt-4 pb-12 bg-gray-800">
       <div class="my-16 text-center">
