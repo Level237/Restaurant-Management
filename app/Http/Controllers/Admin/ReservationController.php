@@ -42,8 +42,13 @@ class ReservationController extends Controller
      */
     public function store(ReservationRequest $request)
     {
-        Reservation::create($request->validated());
+        $table=Table::findOrFail($request->table_id);
 
+        if($request->guest_number > $table->guest_number){
+
+            return back()->with('warning','Please choose the table base on guests');
+        }
+        Reservation::create($request->validated());
         return to_route('admin.reservations.index')->with('success','Reservation created Successfully');
     }
 
