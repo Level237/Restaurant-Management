@@ -9,7 +9,7 @@ Use App\Http\Controllers\Admin\ReservationController;
 Use App\Http\Controllers\frontend\CategoryController as FrontendCategoryController;
 Use App\Http\Controllers\frontend\MenuController as FrontendMenuController;
 Use App\Http\Controllers\frontend\WelcomeController as WelcomeController;
-Use App\Http\Controllers\frontend\reservationController as FrontendReservationController;
+Use App\Http\Controllers\frontend\ReservationController as FrontendReservationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

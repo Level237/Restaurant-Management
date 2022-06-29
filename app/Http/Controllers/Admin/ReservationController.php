@@ -91,6 +91,19 @@ class ReservationController extends Controller
      */
     public function update(ReservationRequest $request, Reservation $reservation)
     {
+        $table=Table::findOrFail($request->table_id);
+
+        if($request->guest_number > $table->guest_number){
+
+            return back()->with('warning','Please choose the table base on guests');
+        }
+        $request_date=Carbon::parse($request->res_date);
+        $reservations=$table->Reservations()->where('id','!=',$reservation->id)-get();
+        foreach($reservations as $res){
+            if($res->res_date->format('Y-m-d')==$request_date->format('Y-m-d')){
+                return back()->with('warning',' Please This table is reserved for this date');
+            }
+        }
         $reservation->update($request->validated());
 
         return to_route('admin.reservations.index')->with('success','Table updated Successfully');
