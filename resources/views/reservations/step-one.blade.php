@@ -73,9 +73,9 @@
                                     </label>
                                     <div class="mt-1">
                                         <input type="datetime-local" id="res_date" name="res_date"
-                                            min=""
-                                            max=""
-                                            value="{{ $reservation->res_date ?? ''}}"
+                                            min="{{ $min_date->format('Y-m-d\TH:i:s') }}"
+                                            max="{{ $max_date->format('Y-m-d\TH:i:s') }}"
+                                            value="{{ $reservation ? $reservation->res_date->format('Y-m-d\TH:i:s') : ''}}"
                                             class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
                                     </div>
                                     <span class="text-xs">Please choose the time between 17:00-23:00.</span>
