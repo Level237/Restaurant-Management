@@ -15,6 +15,7 @@
                 <div class="space-y-8 divide-y divide-gray-200 w-1/2 mt-10">
                     <form method="POST" action="{{ route('admin.reservations.update',$reservation->id) }}"  enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                         <div class="sm:col-span-6">
                         <label for="first_name" class="block text-sm font-medium text-gray-700">First Name</label>
                         <div class="mt-1">
