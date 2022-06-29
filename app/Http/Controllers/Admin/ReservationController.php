@@ -98,7 +98,7 @@ class ReservationController extends Controller
             return back()->with('warning','Please choose the table base on guests');
         }
         $request_date=Carbon::parse($request->res_date);
-        $reservations=$table->Reservations()->where('id','!=',$reservation->id)-get();
+        $reservations=$table->Reservations()->where('id','!=',$reservation->id)->get();
         foreach($reservations as $res){
             if($res->res_date->format('Y-m-d')==$request_date->format('Y-m-d')){
                 return back()->with('warning',' Please This table is reserved for this date');
