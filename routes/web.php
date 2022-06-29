@@ -27,7 +27,9 @@ Route::get('/categories',[FrontendCategoryController::class,'index'])->name('cat
 Route::get('/categories/{category}',[FrontendCategoryController::class,'show'])->name('categories.show');
 Route::get('/menus',[FrontendMenuController::class,'index'])->name('menus.index');
 Route::get('/reservations/stepOne',[FrontendReservationController::class,'stepOne'])->name('reservation.stepOne');
+Route::post('/reservations/stepOne',[FrontendReservationController::class,'storeStepOne'])->name('reservation.store.stepOne');
 Route::get('/reservations/stepTwo',[FrontendReservationController::class,'steptwo'])->name('reservation.stepTwo');
+Route::post('/reservations/stepTwo',[FrontendReservationController::class,'storeSeptwo'])->name('reservation.store.stepTwo');
 
 
 
