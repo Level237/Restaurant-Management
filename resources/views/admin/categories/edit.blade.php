@@ -32,7 +32,7 @@
                             <img class="w-32 h-32" src="{{ Storage::url($category->image) }}">
                         </div>
                         <div class="mt-1">
-                            <input type="file" id="image"  name="image" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2 @error('image') border-red-400 @enderror">
+                            <input type="file" id="image" value="{{ $category->image }}" name="image" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2 @error('image') border-red-400 @enderror">
                         </div>
                         @error('image')
                             <div class="text-sm text-red-400">{{ $message }}</div>
